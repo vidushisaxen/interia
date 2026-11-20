@@ -8,7 +8,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import cloud from "@/assets/hero/cloud.png";
-import villa from "@/assets/hero/villa.webp";
+import villa from "@/assets/hero/villa.png";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 

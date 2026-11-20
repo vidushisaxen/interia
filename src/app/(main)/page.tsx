@@ -2,7 +2,7 @@
 import "./haven-styles.css";
 import type { Metadata } from "next";
 import { Geist, Inter } from "next/font/google";
-import ogImage from "@/assets/hero/villa.webp";
+import ogImage from "@/assets/hero/villa.png";
 import Hero from "@/components/Hero/Hero";
 import LenisSmoothScroll from "@/components/LenisSmoothScroll";
 import ScrollTopOnLoad from "@/components/ScrollTopOnLoad";
