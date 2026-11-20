@@ -22,7 +22,7 @@ export default function Hero() {
       mm.add("(prefers-reduced-motion: no-preference)", () => {
         gsap.fromTo(
           villaRef.current,
-          { yPercent: 30 },
+          { yPercent: 20 },
           {
             yPercent: 0,
             ease: "none",
@@ -35,23 +35,28 @@ export default function Hero() {
   );
 
   return (
-    <section ref={sectionRef} className="relative h-[200vh] w-full">
-      <div className="sticky top-0 h-screen w-full overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image src={cloud} alt="" fill sizes="100vw" loading="eager" className="object-cover" />
-        </div>
-        <div ref={villaRef} className="absolute inset-x-0 bottom-0 z-[1] aspect-[5/4] w-full">
-          <Image
-            src={villa}
-            alt="An image of a beautiful villa"
-            fill
-            sizes="100vw"
-            loading="eager"
-            fetchPriority="high"
-            className="object-cover"
-          />
-        </div>
+    <section ref={sectionRef} className="relative grid w-full overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <Image src={cloud} alt="" fill sizes="100vw" loading="eager" className="object-cover object-top" />
       </div>
+      <div className="relative z-[1] col-start-1 row-start-1 flex flex-col items-center gap-6 self-start px-[3.5vw] py-[14vh] max-lg:px-[6vw] max-md:gap-4 max-md:px-[5vw] max-md:py-[12vh]">
+        <h1 className="w-[69%] text-center text-[#fffbf5] max-lg:w-full">Spaces that connect people</h1>
+        <p className="w-[28%] text-center text-28 text-[#fffbf5] max-lg:w-[50%] max-md:w-full">
+          We design more than buildings, we create spaces that foster connection, creativity, and community
+        </p>
+      </div>
+      <div ref={villaRef} className="pointer-events-none relative z-[2] col-start-1 row-start-1 aspect-[5/4] w-full self-end">
+        <Image
+          src={villa}
+          alt="An image of a beautiful villa"
+          fill
+          sizes="100vw"
+          loading="eager"
+          fetchPriority="high"
+          className="object-cover"
+        />
+      </div>
+      <div className="pointer-events-none relative z-[3] col-start-1 row-start-1 h-[30vh] self-end bg-[linear-gradient(180deg,#ffffff00_0%,#ffffff_77.3%)]" />
     </section>
   );
 }

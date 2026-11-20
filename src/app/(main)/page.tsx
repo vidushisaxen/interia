@@ -3,20 +3,21 @@ import "./haven-styles.css";
 import type { Metadata } from "next";
 import { Geist, Inter } from "next/font/google";
 import ogImage from "@/assets/hero/villa.png";
+import About from "@/components/About/About";
 import Hero from "@/components/Hero/Hero";
 import LenisSmoothScroll from "@/components/LenisSmoothScroll";
 import ScrollTopOnLoad from "@/components/ScrollTopOnLoad";
 
 const headFont = Inter({
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["400"],
   variable: "--font-haven-head",
   display: "swap",
 });
 
 const bodyFont = Inter({
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["400"],
   variable: "--font-haven-body",
   display: "swap",
 });
@@ -57,6 +58,7 @@ export default function Home() {
       <ScrollTopOnLoad />
       <main>
         <Hero />
+        <About />
       </main>
     </div>
   );
