@@ -1,0 +1,200 @@
+/* Built using Hyperiux Vault: https://vault.hyperiux.com */
+
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-lg: 1025px;
+}
+
+.haven-page,
+html:has(.haven-page) {
+  --font-heading: var(--font-haven-head), "Helvetica Neue", Arial, sans-serif;
+  --font-body: var(--font-haven-body), "Helvetica Neue", Arial, sans-serif;
+  --font-number: var(--font-haven-number), "Helvetica Neue", Arial, sans-serif;
+
+  --haven-ink: #21201b;
+  --haven-dark: #211f1a;
+  --haven-cream: #fffbf5;
+  --haven-sun: #ff833b;
+}
+
+.haven-page {
+  background-color: var(--haven-cream);
+  color: var(--haven-ink);
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.haven-page * {
+  font-family: var(--font-body);
+}
+
+.haven-page h1,
+.haven-page h2,
+.haven-page h3,
+.haven-page h1 *,
+.haven-page h2 *,
+.haven-page h3 * {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  line-height: 90%;
+}
+
+.haven-page .haven-stat-number {
+  font-family: var(--font-number);
+  font-weight: 400;
+  color: var(--haven-cream);
+}
+
+.haven-page h1,
+.haven-page .text-128 {
+  font-size: 5.9vw;
+  letter-spacing: -0.4vw;
+}
+
+.haven-page h2,
+.haven-page .text-64 {
+  font-size: 4.2vw;
+  line-height: 110%;
+  letter-spacing: -0.1vw;
+}
+
+.haven-page .text-40 {
+  font-size: 2.8vw;
+  line-height: 110%;
+  letter-spacing: -0.1vw;
+}
+
+.haven-page h3,
+.haven-page .text-30 {
+  font-size: 1.7vw;
+  line-height: 120%;
+  letter-spacing: -0.05vw;
+}
+
+.haven-page .text-28 {
+  font-size: 1.3vw;
+  line-height: 140%;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+}
+
+.haven-page .text-24 {
+  font-size: 1.1vw;
+  line-height: 150%;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+}
+
+.haven-page .text-22 {
+  font-size: 1.3vw;
+  line-height: 140%;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+}
+
+.haven-page .text-14 {
+  font-size: 0.9vw;
+  line-height: 140%;
+  font-weight: 500;
+}
+
+.haven-container {
+  padding-inline: 5vw;
+}
+
+.haven-section {
+  padding-block: 8%;
+}
+
+@media (max-width: 1025px) {
+  .haven-page h1,
+  .haven-page .text-128 {
+    font-size: 7.3vw;
+    letter-spacing: -0.5vw;
+  }
+
+  .haven-page h2,
+  .haven-page .text-64 {
+    font-size: 5.9vw;
+    letter-spacing: -0.2vw;
+  }
+
+  .haven-page .text-40 {
+    font-size: 4.2vw;
+    letter-spacing: -0.2vw;
+  }
+
+  .haven-page h3,
+  .haven-page .text-30 {
+    font-size: 2.8vw;
+  }
+
+  .haven-page .text-28,
+  .haven-page .text-22 {
+    font-size: 2.1vw;
+  }
+
+  .haven-page .text-24 {
+    font-size: 2vw;
+  }
+
+  .haven-page .text-14 {
+    font-size: 1.6vw;
+  }
+
+  .haven-container {
+    padding-inline: 6vw;
+  }
+
+  .haven-section {
+    padding-block: 12%;
+  }
+}
+
+@media (max-width: 768px) {
+  .haven-page h1,
+  .haven-page .text-128 {
+    font-size: 10.3vw;
+    line-height: 110%;
+    letter-spacing: -0.5vw;
+  }
+
+  .haven-page h2,
+  .haven-page .text-64 {
+    font-size: 9.7vw;
+    letter-spacing: -0.5vw;
+  }
+
+  .haven-page .text-40 {
+    font-size: 7.2vw;
+    letter-spacing: -0.4vw;
+  }
+
+  .haven-page h3,
+  .haven-page .text-30 {
+    font-size: 5.4vw;
+  }
+
+  .haven-page .text-28,
+  .haven-page .text-22 {
+    font-size: 4.4vw;
+  }
+
+  .haven-page .text-24 {
+    font-size: 4.1vw;
+  }
+
+  .haven-page .text-14 {
+    font-size: 3.4vw;
+  }
+
+  .haven-container {
+    padding-inline: 7vw;
+  }
+
+  .haven-section {
+    padding-block: 15%;
+  }
+}

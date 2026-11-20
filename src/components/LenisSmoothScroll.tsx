@@ -1,0 +1,68 @@
+// Built using Hyperiux Vault: https://vault.hyperiux.com
+
+"use client";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef } from "react";
+import { ReactLenis, useLenis, type LenisRef } from "lenis/react";
+import "lenis/dist/lenis.css";
+import { prefersReducedMotion } from "./Animations/reducedMotion";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const syncScrollTrigger = () => ScrollTrigger.update();
+
+interface LenisSmoothScrollProps {
+  duration?: number;
+  lerp?: number;
+  smoothWheel?: boolean;
+  wheelMultiplier?: number;
+  touchMultiplier?: number;
+}
+
+const LenisSmoothScroll = ({
+  duration = 1.35,
+  lerp = 0.1,
+  smoothWheel = true,
+  wheelMultiplier = 0.8,
+  touchMultiplier = 0.8,
+}: LenisSmoothScrollProps) => {
+  const lenisRef = useRef<LenisRef>(null);
+  useLenis(syncScrollTrigger);
+
+  useEffect(() => {
+    function update(time: number) {
+      lenisRef.current?.lenis?.raf(time * 1000);
+    }
+
+    gsap.ticker.add(update);
+    gsap.ticker.lagSmoothing(0);
+
+    return () => {
+      gsap.ticker.remove(update);
+      gsap.ticker.lagSmoothing(500, 33);
+    };
+  }, []);
+
+  if (prefersReducedMotion()) {
+    return null;
+  }
+
+  return (
+    <ReactLenis
+      root
+      options={{
+        autoRaf: false,
+        duration: duration,
+        lerp: lerp,
+        smoothWheel: smoothWheel,
+        wheelMultiplier: wheelMultiplier,
+        touchMultiplier: touchMultiplier,
+        easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      }}
+      ref={lenisRef}
+    />
+  );
+};
+
+export default LenisSmoothScroll;
